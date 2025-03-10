@@ -12,6 +12,3 @@
 #define LAYER_STATE_8BIT
 #define ORYX_CONFIGURATOR
 #define MOONLANDER_USER_LEDS
-
-// // Suppress tap-hold mods withing a typing streak
-// #define ACHORDION_STREAK

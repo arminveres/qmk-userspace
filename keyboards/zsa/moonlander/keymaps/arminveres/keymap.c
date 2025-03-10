@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H // IWYU pragma: keep
 
-#include "achordion.h"
 #include "enums.h"
 #include "home_row.h"
 #include "sentence_case.h"
@@ -8,7 +7,7 @@
 #define CAPS_WORD CW_TOGG
 
 // clang-format off
-constexpr uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ┌───────────────┬────────┬───────────┬────────┬──────────────┬─────────────┬────┐   ┌────┬─────────────┬──────────────┬───────────────────┬───────────┬───────────┬───────────────┐
 //    │      esc      │   1    │     2     │   3    │      4       │      5      │ no │   │ no │      6      │      7       │         8         │     9     │     0     │     bspc      │
 //    ├───────────────┼────────┼───────────┼────────┼──────────────┼─────────────┼────┤   ├────┼─────────────┼──────────────┼───────────────────┼───────────┼───────────┼───────────────┤
@@ -108,17 +107,14 @@ constexpr uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 
 void keyboard_post_init_user(void) {
-    // rgb_matrix_enable();
+#if 0
+    rgb_matrix_enable();
+#else
     rgb_matrix_disable();
+#endif /* if 0 */
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (!process_achordion(keycode, record)) {
-        return false;
-    }
-    if (!process_sentence_case(keycode, record)) {
-        return false;
-    }
     switch (keycode) {
         case KC_QWERTY: {
             if (record->event.pressed) {
@@ -158,13 +154,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
-uint16_t achordion_streak_chord_timeout(uint16_t tap_hold_keycode, uint16_t next_keycode) {
-    return 50; // Default of 100 ms.
-}
-void matrix_scan_user(void) {
-    // Achordion doc: https://getreuer.info/posts/keyboards/achordion/index.html#achordion_chord
-    achordion_task();
-}
 
 /// Custom LED Indicator implementation for layers, see `moonlander.c`
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -202,3 +191,15 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 #endif
     return state;
 }
+
+// clang-format off
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT_moonlander(
+        'L', 'L', 'L', 'L', 'L', 'L','L',  'R','R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L','L',  'R','R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L','L',  'R','R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',          'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L',     'L',  'R',     'R', 'R', 'R', 'R', 'R',
+                       'L', 'L', 'L',          'R', 'R', 'R'
+    );
+// clang-format on
