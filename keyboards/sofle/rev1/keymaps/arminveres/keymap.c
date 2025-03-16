@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
 #include "enums.h"
-#include "achordion.h"
 #include "sentence_case.h"
 #include "home_row.h"
 
@@ -104,12 +103,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (!process_achordion(keycode, record)) {
-        return false;
-    }
-    if (!process_sentence_case(keycode, record)) {
-        return false;
-    }
     switch (keycode) {
         case KC_QWERTY: {
             if (record->event.pressed) {
@@ -125,27 +118,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
     }
     return true;
-}
-
-// ================================================================================================
-/// Achordion Configuration
-// ================================================================================================
-// https://getreuer.info/posts/keyboards/achordion/index.html
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-    // Basically ignore only for shift on homerow, so more eagerly applied than the
-    // achordion_eager_mod from Achordion
-    switch (tap_hold_keycode) {
-        case HOME_J:
-        case HOME_F:
-            return 0; // Bypass Achordion for these keys.
-    }
-    return 1000; // Otherwise use a timeout of 800 ms.
-}
-
-bool achordion_eager_mod(uint8_t mod) {
-    return false;
-}
-
-void matrix_scan_user(void) {
-    achordion_task();
 }

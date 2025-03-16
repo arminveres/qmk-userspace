@@ -3,12 +3,12 @@ OLED_ENABLE = yes
 OLED_DRIVER = ssd1306
 ENCODER_ENABLE = yes
 WPM_ENABLE = yes
-# TRI_LAYER_ENABLE = yes
-# TAP_DANCE_ENABLE = yes
+# Disable some stuff
+RGB_ENABLE = no
+TRI_LAYER_ENABLE = no
+TAP_DANCE_ENABLE = no
 
 # Bootloader/ MCU configs
-# BOOTLOADER = rp2040
-# PROCESSOR = cortex-m0plus
 CONVERT_TO = rp2040_ce
 
 SRC += \
@@ -16,5 +16,3 @@ SRC += \
 	encoder.c \
 	enums.c
 
-# Disable some stuff
-RGB_ENABLE = no
