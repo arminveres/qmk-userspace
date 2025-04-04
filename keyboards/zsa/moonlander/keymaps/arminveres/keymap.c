@@ -2,7 +2,7 @@
 
 #include "enums.h"
 #include "home_row.h"
-#include "sentence_case.h"
+#include "sentence_case.h" // IWYU pragma: keep
 
 #define CAPS_WORD CW_TOGG
 
