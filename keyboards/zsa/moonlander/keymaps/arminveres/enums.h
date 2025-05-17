@@ -11,8 +11,13 @@ enum eCustomKeycodes {
 };
 
 enum eLayers {
-    _QWERTY,  //
-    _GAMING,  //
-    _SPECIAL, //
-    _ADJUST   //
+    _QWERTY, //
+    _GAMING, //
+    _NAV,    //
+    _MOUSE,    //
+    _MEDIA,  //
+    _NUM,    //
+    _SYM,    //
+    _FUN,    //
+    _ADJUST  //
 };
