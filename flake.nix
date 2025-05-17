@@ -11,14 +11,8 @@
           # overlays = [ (self: super: { gcc-arm-embedded = super.gcc-arm-embedded-13; }) ];
         };
 
-      in
-      {
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs;[
-            zsh
-            qmk
-            cppcheck
-          ];
-        };
+      in {
+        devShells.default =
+          pkgs.mkShell { packages = with pkgs; [ zsh qmk cppcheck clang ]; };
       });
 }
