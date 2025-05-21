@@ -1,3 +1,4 @@
+#include "rgb_matrix.h"
 #include QMK_KEYBOARD_H // IWYU pragma: keep
 
 #include "enums.h"
@@ -150,21 +151,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼──────┼──────┼──────┼──────┼─────┤
 //    │     │  {  │  &  │  *  │  (  │  }  │     │   │     │     │      │      │      │      │     │
 //    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼──────┼──────┼──────┼──────┼─────┤
-//    │     │  :  │  $  │  %  │  ^  │  +  │     │   │     │     │ rsft │ rctl │ lalt │ rgui │     │
+//    │     │  "  │  $  │  %  │  ^  │  +  │     │   │     │     │ rsft │ rctl │ lalt │ rgui │     │
 //    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┘   └─────┼─────┼──────┼──────┼──────┼──────┼─────┤
 //    │     │  ~  │  !  │  @  │  #  │  |  │               │     │      │      │      │      │     │
 //    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┐   ┌─────┼─────┼──────┼──────┼──────┼──────┼─────┤
-//    │     │     │     │     │  _  │     │     │   │     │     │      │      │      │      │     │
+//    │     │     │     │     │  )  │     │     │   │     │     │      │      │      │      │     │
 //    └─────┴─────┴─────┼─────┼─────┼─────┼─────┘   └─────┼─────┼──────┼──────┼──────┴──────┴─────┘
-//                      │  (  │  )  │     │               │     │      │      │
+//                      │  (  │  _  │     │               │     │      │      │
 //                      └─────┴─────┴─────┘               └─────┴──────┴──────┘
 [_SYM] = LAYOUT_moonlander(
   _______ , _______ , _______ , _______ , _______ , _______ , _______ ,     _______ , _______ , _______ , _______ , _______ , _______ , _______,
   _______ , KC_LCBR , KC_AMPR , KC_ASTR , KC_LPRN , KC_RCBR , _______ ,     _______ , _______ , _______ , _______ , _______ , _______ , _______,
-  _______ , KC_COLN , KC_DLR  , KC_PERC , KC_CIRC , KC_PLUS , _______ ,     _______ , _______ , KC_RSFT , KC_RCTL , KC_LALT , KC_RGUI , _______,
+  _______ , KC_DQUO , KC_DLR  , KC_PERC , KC_CIRC , KC_PLUS , _______ ,     _______ , _______ , KC_RSFT , KC_RCTL , KC_LALT , KC_RGUI , _______,
   _______ , KC_TILD , KC_EXLM , KC_AT   , KC_HASH , KC_PIPE ,                         _______ , _______ , _______ , _______ , _______ , _______,
-  _______ , _______ , _______ , _______ , KC_UNDS ,           _______ ,     _______ ,           _______ , _______ , _______ , _______ , _______,
-                                KC_LPRN , KC_RPRN , _______ ,                         _______ , _______ , _______
+  _______ , _______ , _______ , _______ , KC_RPRN ,           _______ ,     _______ ,           _______ , _______ , _______ , _______ , _______,
+                                KC_LPRN , KC_UNDS , _______ ,                         _______ , _______ , _______
 ),
 
 //    ┌─────┬─────┬─────┬─────┬─────┬──────┬─────┐   ┌─────┬─────┬──────┬──────┬──────┬──────┬─────┐
@@ -273,21 +274,22 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     bool LED_6 = false;
 #endif
     auto layer = get_highest_layer(state);
+    // clang-format off
     switch (layer) {
-        case 0 ... 1:
-            break;
+        case _QWERTY ... _GAMING: break;
         // first and second layers are persistent layers!
-        case 2:
-            LED_1 = true;
-            LED_4 = true;
-            break;
-        case 3:
-            LED_2 = true;
-            LED_5 = true;
-            break;
-        default:
-            break;
+        case _MEDIA: LED_1 = true; break;
+        case _NAV:   LED_2 = true; break;
+        case _MOUSE: LED_3 = true; break;
+            // mirror back
+#if !defined(CAPS_LOCK_STATUS)
+        case _FUN:   LED_6 = true; break;
+#endif
+        case _NUM:   LED_5 = true; break;
+        case _SYM:   LED_4 = true; break;
+        default: break;
     }
+    // clang-format on
     ML_LED_1(LED_1);
     ML_LED_2(LED_2);
     ML_LED_3(LED_3);
