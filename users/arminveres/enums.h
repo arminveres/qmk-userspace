@@ -6,13 +6,13 @@
 #define MY_LAYERS                      \
     X_LAYER(_QWERTY, "Qwrt", "BASE\n") \
     X_LAYER(_GAMING, "Game", "GAMING") \
-    X_LAYER(_NAV,    "----", "NAV")    \
+    X_LAYER(_NAV,    "----", "NAV\n")  \
     X_LAYER(_MOUSE,  "----", "MOUSE")  \
     X_LAYER(_MEDIA,  "----", "MEDIA")  \
-    X_LAYER(_NUM,    "----", "NUM")    \
-    X_LAYER(_SYM,    "----", "SYM")    \
-    X_LAYER(_FUN,    "----", "FUN")    \
-    X_LAYER(_ADJUST,  "----", "ADJUST")
+    X_LAYER(_NUM,    "----", "NUM\n")  \
+    X_LAYER(_SYM,    "----", "SYM\n")  \
+    X_LAYER(_FUN,    "----", "FUN\n")  \
+    X_LAYER(_ADJUST, "----", "ADJST")
 // clang-format on
 
 #define X_LAYER(layer, mode_name, layer_name) layer,

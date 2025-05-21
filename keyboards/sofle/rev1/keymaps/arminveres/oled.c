@@ -114,12 +114,12 @@ static void print_status_narrow(void) {
     // }
 
     // default layer
-    oled_write_P(PSTR(gSofleModeNames[get_highest_layer(default_layer_state)]), false);
+    oled_write_P(PSTR(gOledModeNames[get_highest_layer(default_layer_state)]), false);
     oled_write_P(PSTR("\n\n"), false);
 
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
-    oled_write_P(PSTR(gSofleLayerNames[get_highest_layer(layer_state)]), false);
+    oled_write_P(PSTR(gOledLayerNames[get_highest_layer(layer_state)]), false);
     oled_write_P(PSTR("\n\n"), false);
 
     // Print capslock status
