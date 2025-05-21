@@ -24,3 +24,5 @@
 
 /// https://docs.qmk.fm/tap_hold#chordal-hold
 #define CHORDAL_HOLD
+
+#define auto __auto_type
