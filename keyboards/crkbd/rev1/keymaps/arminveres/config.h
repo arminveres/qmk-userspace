@@ -43,3 +43,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
 #endif
+
+#define NO_MUSIC_MODE
+#define LAYER_STATE_8BIT
+
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+
+#define NO_ACTION_ONESHOT
