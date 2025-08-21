@@ -1,14 +1,10 @@
 #pragma once
 
-
-/// Set encoder settings
-#ifdef ENCODER_RESOLUTION
 // Setting the resolution to 4 results in 10% increase e.g., in volume change. 2 is 20% so 8 should
 // result in 5%
 // WARN: using 8 does not correctly increment the volume by 5%
-#    undef ENCODER_RESOLUTION
-#    define ENCODER_RESOLUTION 4
-#endif
+#undef ENCODER_RESOLUTION
+#define ENCODER_RESOLUTION 4
 
 #ifdef OLED_ENABLE
 #    define OLED_TIMEOUT 20000 // 120000 = 2 minutes in ms.

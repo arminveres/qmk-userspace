@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "enums.h"
-#include "sentence_case.h"
+#include "sentence_case.h" // IWYU pragma: keep
 #include "home_row.h"
 
 // clang-format off
@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB        , KC_Q   , KC_W         , KC_E    , KC_R    , KC_T   ,                               KC_Y   , KC_U    , KC_I    , KC_O           , KC_P      , KC_BSLS        ,
   KC_LCTL       , HOME_A , HOME_S       , HOME_D  , HOME_F  , KC_G   ,                               KC_H   , HOME_J  , HOME_K  , HOME_L         , HOME_SCLN , RCTL_T(KC_QUOT),
   OSM(MOD_LSFT) , KC_Z   , RALT_T(KC_X) , KC_C    , KC_V    , KC_B   , KC_MUTE    ,     XXXXXXX    , KC_N   , KC_M    , KC_COMM , RALT_T(KC_DOT) , KC_SLSH   , OSM(MOD_RSFT)  ,
-                           MO(_ADJUST)  , KC_LALT , KC_LGUI , KC_SPC , MO(_LOWER) ,     MO(_LOWER) , KC_ENT , KC_LGUI , KC_LALT , MO(_ADJUST)
+                           XXXXXXX  , KC_LALT , KC_LGUI , LT(_LOWER, KC_SPC) , MO(_ADJUST) ,     MO(_ADJUST) , LT(_LOWER ,KC_ENT) , KC_LGUI , KC_LALT , XXXXXXX
 ),
 
 //    ┌───────────────┬───┬─────────────┬──────┬──────┬─────┐                             ┌─────┬──────┬──────┬─────┬───┬───────────────┐
@@ -94,8 +94,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                       └─────────┴─────┴─────────┴─────┴─────┘   └─────┴─────┴──────┴──────┴──────┘
 [_ADJUST] = LAYOUT(
   XXXXXXX , XXXXXXX   , XXXXXXX   , XXXXXXX , XXXXXXX , XXXXXXX ,                         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-  QK_BOOT , KC_QWERTY , KC_GAMING , XXXXXXX , CG_TOGG , XXXXXXX ,                         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-  XXXXXXX , XXXXXXX   , CG_TOGG   , XXXXXXX , XXXXXXX , XXXXXXX ,                         XXXXXXX , KC_VOLD , KC_MUTE , KC_VOLU , XXXXXXX , XXXXXXX,
+  QK_BOOT , KC_QWERTY , KC_GAMING , XXXXXXX , XXXXXXX , XXXXXXX ,                         XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
+  XXXXXXX , XXXXXXX   , XXXXXXX   , XXXXXXX , XXXXXXX , XXXXXXX ,                         XXXXXXX , KC_VOLD , KC_MUTE , KC_VOLU , XXXXXXX , XXXXXXX,
   XXXXXXX , XXXXXXX   , XXXXXXX   , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , KC_MPRV , KC_MPLY , KC_MNXT , XXXXXXX , XXXXXXX,
                         _______   , _______ , _______ , _______ , _______ ,     _______ , _______ , _______ , _______ , _______
 )
