@@ -1,0 +1,22 @@
+SPLIT_KEYBOARD = yes
+
+# Optimisiations
+LTO_ENABLE = yes
+CONSOLE_ENABLE = no
+COMMAND_ENABLE = no
+MOUSEKEY_ENABLE = no
+EXTRAKEY_ENABLE = no
+SPACE_CADET_ENABLE = no
+GRAVE_ESC_ENABLE = no
+MAGIC_ENABLE = no
+AVR_USE_MINIMAL_PRINTF = yes
+
+TRI_LAYER_ENABLE = no
+TAP_DANCE_ENABLE = no
+OLED_ENABLE = no
+# won't be adding sounds
+MUSIC_ENABLE = no
+# disable rgb related stuff
+RGB_ENABLE = no
+RGB_MATRIX_ENABLE = no
+RGBLIGHT_ENABLE = no
