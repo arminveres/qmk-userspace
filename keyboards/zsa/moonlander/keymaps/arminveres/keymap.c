@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LCTL      , KC_A    , KC_S   , KC_D     , KC_F    , KC_G        , KC_LBRC  ,     KC_RBRC  , KC_H        , KC_J    , KC_K                    , KC_L    , KC_SCLN  , RCTL_T(KC_QUOTE),
   KC_LSFT      , KC_Z    , KC_X   , KC_C     , KC_V    , KC_B        ,                           KC_N        , KC_M    , KC_COMMA                , KC_DOT  , KC_SLASH , KC_RSFT         ,
   KC_CAPS_LOCK , XXXXXXX , KC_ESC , KC_LALT  , KC_LGUI ,               KC_RALT  ,     KC_RALT  ,               KC_RGUI , MT(MOD_LALT, KC_ESCAPE) , XXXXXXX , XXXXXXX  , XXXXXXX         ,
-                                    KC_SPACE , _______ , MO(_ADJUST) ,                           MO(_ADJUST) , _______ , KC_ENTER
+                                    KC_SPACE , MO(_NAV) , MO(_ADJUST) ,                           MO(_ADJUST) , MO(_FUN) , KC_ENTER
 ),
 
 //    ┌─────┬──────┬──────┬──────┬──────┬─────┬─────┐   ┌─────┬──────┬──────┬──────┬──────┬───────────┬─────┐
