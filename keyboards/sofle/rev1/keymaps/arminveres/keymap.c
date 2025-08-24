@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "enums.h"
-#include "sentence_case.h"
+#include "sentence_case.h" // IWYU pragma: keep
 #include "home_row.h"
 
 // clang-format off

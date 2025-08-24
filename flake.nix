@@ -5,14 +5,14 @@
 
   outputs = { nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-          # overlays = [ (self: super: { gcc-arm-embedded = super.gcc-arm-embedded-13; }) ];
-        };
-
+      let pkgs = import nixpkgs { inherit system; };
       in {
-        devShells.default =
-          pkgs.mkShell { packages = with pkgs; [ zsh qmk cppcheck clang ]; };
+        devShells.default = pkgs.mkShell {
+          packages = with pkgs; [ zsh qmk cppcheck nixd ccache ];
+          shellHook = ''
+            export QMK_CCACHE=y
+            export QMK_CONCURRENCY=`nproc`
+          '';
+        };
       });
 }
