@@ -8,4 +8,6 @@ COMMAND_ENABLE = no
 AUDIO_ENABLE = no
 SPACE_CADET_ENABLE = no
 
-SRC+= user_caps.c
+SRC+= \
+	  user_caps.c \
+	  enums.c

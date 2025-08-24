@@ -24,3 +24,12 @@
 
 /// https://docs.qmk.fm/tap_hold#chordal-hold
 #define CHORDAL_HOLD
+
+#define auto __auto_type
+
+#define CAPS_WORD CW_TOGG
+#define U_RDO KC_AGIN
+#define U_PST KC_PSTE
+#define U_CPY KC_COPY
+#define U_CUT KC_CUT
+#define U_UND KC_UNDO

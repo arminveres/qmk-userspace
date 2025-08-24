@@ -9,6 +9,6 @@
 #define RGB_MATRIX_STARTUP_SPD 60
 
 /// only define this if we are using up to 8 layers, if more use 16 bit or disable altogether
-#define LAYER_STATE_8BIT
+#define LAYER_STATE_16BIT
 #define ORYX_CONFIGURATOR
 #define MOONLANDER_USER_LEDS
