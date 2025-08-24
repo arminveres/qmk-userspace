@@ -30,4 +30,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 
-#define NO_ACTION_ONESHOT
+#undef LAYOUT
+#define LAYOUT LAYOUT_split_3x5_3
