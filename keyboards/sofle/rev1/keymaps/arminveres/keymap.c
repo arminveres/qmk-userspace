@@ -1,7 +1,7 @@
-#include QMK_KEYBOARD_H
+#include QMK_KEYBOARD_H // IWYU pragma: keep
 #include "enums.h"
 #include "sentence_case.h" // IWYU pragma: keep
-#include "home_row.h"
+#include "home_row.h"      // IWYU pragma: keep
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
