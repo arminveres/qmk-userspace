@@ -3,7 +3,6 @@
     "build_targets": [
         ["sofle/rev1", "arminveres"],
         ["zsa/moonlander", "arminveres"],
-        ["handwired/dactyl_manuform/4x5", "arminveres"],
         ["crkbd/rev1", "arminveres"]
     ]
 }

@@ -22,8 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define MASTER_LEFT
 
-//#define USE_MATRIX_I2C
-
 #define NO_MUSIC_MODE
 #define LAYER_STATE_16BIT
 

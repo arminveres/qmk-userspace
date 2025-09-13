@@ -13,6 +13,4 @@ CONVERT_TO = rp2040_ce
 
 SRC += \
 	oled.c \
-	encoder.c \
-	enums.c
-
+	encoder.c
