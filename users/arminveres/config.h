@@ -25,6 +25,11 @@
 /// https://docs.qmk.fm/tap_hold#chordal-hold
 #define CHORDAL_HOLD
 
+/// https://docs.qmk.fm/tap_hold#flow-tap
+#define FLOW_TAP_TERM 150
+
+/// ===============================================================================================
+/// ALIAS
 #define auto __auto_type
 
 #define CAPS_WORD CW_TOGG
