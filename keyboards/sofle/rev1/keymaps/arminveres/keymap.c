@@ -1,7 +1,7 @@
-#include QMK_KEYBOARD_H
+#include QMK_KEYBOARD_H // IWYU pragma: keep
 #include "enums.h"
 #include "sentence_case.h" // IWYU pragma: keep
-#include "home_row.h"
+#include "home_row.h"      // IWYU pragma: keep
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______ , _______ , _______ , _______ , _______ , _______ ,                         _______ , _______ , _______ , _______ , _______ , _______,
   _______ , _______ , _______ , _______ , _______ , _______ ,                         U_RDO   , U_PST   , U_CPY   , U_CUT   , U_RDO   , _______,
   _______ , KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , _______ ,                         MS_LEFT , MS_DOWN , MS_UP   , MS_RGHT , _______ , _______,
-  _______ , _______ , _______ , _______ , _______ , _______ , _______ ,     _______ , KC_WH_L , KC_WH_D , KC_WH_U , KC_WH_R , _______ , _______,
+  _______ , _______ , _______ , _______ , _______ , _______ , _______ ,     _______ , MS_WHLL , MS_WHLD , MS_WHLU , MS_WHLR , _______ , _______,
                       _______ , _______ , _______ , _______ , _______ ,     MS_BTN3 , MS_BTN2 , MS_BTN1 , _______ , _______
 ),
 
