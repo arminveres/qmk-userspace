@@ -14,6 +14,12 @@
 /// Change Tapping Term from the default 200ms!
 #define TAPPING_TERM 250
 
+/// https://docs.qmk.fm/tap_hold#flow-tap
+// #define FLOW_TAP_TERM 200
+
+/// https://docs.qmk.fm/tap_hold#chordal-hold
+#define CHORDAL_HOLD
+
 /// In combination with fast typing and home row mods, PERMISSIVE_HOLD enables to register keys instead of layer changes
 /// For more information see: https://docs.qmk.fm/#/tap_hold?id=tap-or-hold-decision-modes
 #define PERMISSIVE_HOLD
@@ -22,11 +28,7 @@
 #define USE_HOMEROW_MODS
 #undef PARTIAL_HOME_MODS
 
-/// https://docs.qmk.fm/tap_hold#chordal-hold
-#define CHORDAL_HOLD
 
-/// https://docs.qmk.fm/tap_hold#flow-tap
-#define FLOW_TAP_TERM 150
 
 /// ===============================================================================================
 /// ALIAS
