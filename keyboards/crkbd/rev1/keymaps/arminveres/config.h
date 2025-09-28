@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 #define MASTER_LEFT
+#define SPLIT_USB_DETECT
 
 #define NO_MUSIC_MODE
 #define LAYER_STATE_16BIT
@@ -30,3 +31,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #undef LAYOUT
 #define LAYOUT LAYOUT_split_3x5_3
+
+
+// For cases where the keyboard does nor properly wake up: https://docs.qmk.fm/config_options
+#undef USB_SUSPEND_WAKEUP_DELAY
+#define USB_SUSPEND_WAKEUP_DELAY 200
