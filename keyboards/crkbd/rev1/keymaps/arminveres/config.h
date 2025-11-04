@@ -24,15 +24,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPLIT_USB_DETECT
 
 #define NO_MUSIC_MODE
+// https://docs.qmk.fm/features/split_keyboard
 #define LAYER_STATE_16BIT
-
-#undef LOCKING_SUPPORT_ENABLE
-#undef LOCKING_RESYNC_ENABLE
+#define SPLIT_WATCHDOG_ENABLE
 
 #undef LAYOUT
 #define LAYOUT LAYOUT_split_3x5_3
 
-
 // For cases where the keyboard does nor properly wake up: https://docs.qmk.fm/config_options
-#undef USB_SUSPEND_WAKEUP_DELAY
-#define USB_SUSPEND_WAKEUP_DELAY 200
