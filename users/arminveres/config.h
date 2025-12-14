@@ -28,8 +28,6 @@
 #define USE_HOMEROW_MODS
 #undef PARTIAL_HOME_MODS
 
-
-
 /// ===============================================================================================
 /// ALIAS
 #define auto __auto_type

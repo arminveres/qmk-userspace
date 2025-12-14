@@ -10,4 +10,5 @@ SPACE_CADET_ENABLE = no
 
 SRC += \
 	  user_caps.c \
-	  enums.c
+	  enums.c \
+	  flow_tap.c
