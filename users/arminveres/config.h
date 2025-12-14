@@ -12,10 +12,10 @@
 /// To do individual keys: https://docs.qmk.fm/#/tap_hold?id=tapping-term
 #undef TAPPING_TERM
 /// Change Tapping Term from the default 200ms!
-#define TAPPING_TERM 250
+#define TAPPING_TERM 240
 
 /// https://docs.qmk.fm/tap_hold#flow-tap
-// #define FLOW_TAP_TERM 200
+#define FLOW_TAP_TERM 100
 
 /// https://docs.qmk.fm/tap_hold#chordal-hold
 #define CHORDAL_HOLD
