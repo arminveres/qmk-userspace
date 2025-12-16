@@ -15,11 +15,6 @@ uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t *record, uint16_t prev_
             case HOME_SCLN:
             case HOME_L:
                 return FLOW_TAP_TERM;
-
-                // Controls
-            case HOME_K:
-            case HOME_D:
-                return FLOW_TAP_TERM - 25;
         }
     }
     // Disable Flow Tap otherwise.
