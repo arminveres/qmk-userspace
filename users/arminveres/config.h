@@ -17,6 +17,12 @@
 /// https://docs.qmk.fm/tap_hold#flow-tap
 #define FLOW_TAP_TERM 100
 
+/// https://docs.qmk.fm/tap_hold#speculative-hold
+/// Applies Shift/Ctrl mod-taps instantly; restricted to avoid flashing mods while typing fast.
+#define SPECULATIVE_HOLD
+#define SPECULATIVE_HOLD_ONE_KEY
+#define SPECULATIVE_HOLD_FLOW_TERM FLOW_TAP_TERM
+
 /// https://docs.qmk.fm/tap_hold#chordal-hold
 #define CHORDAL_HOLD
 
