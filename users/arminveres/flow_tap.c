@@ -3,6 +3,9 @@
 #    include <stdint.h>
 #    include "home_row.h"
 
+// Longer window for the weak-finger GUI/Alt keys, which misfire most.
+#    define FLOW_TAP_TERM_GACS 150
+
 uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t *record, uint16_t prev_keycode) {
 // Use pgetreuers function: https://github.com/getreuer/qmk-keymap/blob/main/getreuer.c
 
@@ -14,7 +17,7 @@ uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t *record, uint16_t prev_
             case HOME_S:
             case HOME_SCLN:
             case HOME_L:
-                return FLOW_TAP_TERM;
+                return FLOW_TAP_TERM_GACS;
         }
     }
     // Disable Flow Tap otherwise.
